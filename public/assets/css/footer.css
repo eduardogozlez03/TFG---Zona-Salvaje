@@ -1,0 +1,42 @@
+/* Footer */
+.footer {
+position: relative;
+background-color: #555555;
+color: #fff;
+height: 250px;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: flex-end; /* 👈 Links al fondo */
+padding-bottom: 30px;
+}
+
+.social-icons {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); /* 👈 Centrado exacto */
+display: flex;
+gap: 35px;
+}
+
+.social-icons img {
+width: 42px;
+height: 42px;
+cursor: pointer;
+background-color: #B3B3B3; /* Color del cuadradito (puedes ajustarlo) */
+padding: 8px; /* Espacio alrededor del icono */
+border-radius: 8px; /* Bordes redondeados del cuadrado */
+transition: background-color 0.3s ease;
+}
+
+/* Al hacer hover, cambiamos el fondo */
+.social-icons img:hover {
+background-color: #898888; /* Verde cuando pasas el ratón (ajustalo si quieres otro tono) */
+}
+
+
+.footer-links {
+font-size: 14px;
+color: #aaa;
+}

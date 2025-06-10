@@ -1,0 +1,445 @@
+:host {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+/* ——— Slider interactivo ——— */
+.hero.slider-container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    /* Toma toda la altura del viewport */
+    overflow: visible;
+    z-index: 90;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.hero-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+.hero-subtitle::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #207E27;
+    transform: scaleX(0.8);
+}
+
+.hero-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #207E27;
+    transform: scaleX(0.8);
+}
+
+
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 3.5rem;
+    }
+}
+
+.slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+    z-index: 0;
+}
+
+/* Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slider-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-dots .dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+
+.slider-dots .dot.active {
+    background-color: #fff;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-wrapper.animate {
+    animation: slide-in 0.5s ease-in-out;
+}
+
+.slider-image.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+
+/* Cards section */
+.cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+    padding: 60px 20px;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.card {
+    margin: 180px 120px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    width: 300px;
+    /* max-width: 300px; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* display: block; */
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px;
+    color: #207E27;
+}
+
+.card p {
+    font-size: 16px;
+    color: #444;
+    margin: 0 50px 40px 50px;
+}
+
+/* SECTION */
+.gradient-section {
+    position: relative;
+    background-color: #207E27;
+    /* Color base del gradiente */
+    height: 400px;
+    /* Puedes ajustar la altura del gradiente */
+    width: 100%;
+    z-index: 1;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, #207E27, #555555);
+    /* Gradiente que se extiende por todo el fondo */
+    z-index: -1;
+    /* Lo coloca por debajo de las cards */
+}
+
+.card-section {
+    position: relative;
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    z-index: 2;
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* Para que se adapten en pantallas pequeñas */
+    justify-content: center;
+    /* Centra horizontalmente */
+    gap: 20px;
+    /* Espacio entre cards */
+    margin-top: 100px;
+    margin-bottom: 80px;
+    /* Espacio respecto al contenido anterior */
+}
+
+
+.card-round {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 140px 35px 30px;
+    /* espacio para que la imagen se superponga arriba */
+    max-width: 250px;
+    margin: 60px auto;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: -150px;
+}
+
+.card-round:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-round .avatar {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    position: absolute;
+    top: -118px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #eee;
+}
+
+.card-round h4 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #207E27;
+}
+
+.card-round p {
+    font-size: 15px;
+    color: #444;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+/* icono de la card */
+.card-icon-link {
+    display: inline-block;
+    margin-top: 25px;
+    /* Separación respecto al contenido arriba */
+}
+
+.card-icon-link img {
+    width: 32px;
+    /* Tamaño del icono */
+    height: 32px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Animación suave al pasar ratón */
+}
+
+.card-icon-link img:hover {
+    transform: scale(1.1);
+    /* Efecto de agrandar un poco en hover */
+}
+
+.card-icon-link:hover img {
+    /* content: url('/icons/enlaceCardHover.svg'); */
+    /* Cambia el icono al pasar el ratón */
+    transform: scale(1.1);
+    /* Además le damos un pequeño efecto de escala */
+}
+
+
+@media (max-width: 1084px) {
+    .card-round {
+        width: calc(50% - 30px);
+        /* 2 columnas con gap incluido */
+        margin-top: 20px;
+        margin-bottom: 220px;
+    }
+
+}
+
+/* Responsive mobile-first */
+@media (max-width: 768px) {
+    .hero.slider-container {
+        height: 80vh;
+    }
+
+    .cards-section {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-grid {
+        flex-direction: column;
+        /* Apila las tarjetas una debajo de otra */
+        align-items: center;
+        /* Centra horizontalmente las tarjetas */
+    }
+
+    .card-round {
+        margin: 0 auto;
+        /* Centrado y espacio entre tarjetas */
+        margin-bottom: 150px;
+        width: 70%;
+        /* Ancho más flexible en móviles */
+        max-width: 250px;
+        /* Mantiene el tamaño bajo control */
+    }
+
+    .card {
+        width: 70%;
+        margin: 120px auto;
+    }
+
+    .highlight {
+        flex-direction: row;
+    }
+
+    .highlight-card {
+        width: 23%;
+    }
+
+}
+
+/*Animación click CARD*/
+/* Transición suave para las cards al hacer clic */
+.card-icon-link {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-icon-link img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-icon-link:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Clase que aplica la animación de salida */
+.card-icon-link.card-clicked img {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+/* Spinner de carga (animación) */
+.loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #207E27;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

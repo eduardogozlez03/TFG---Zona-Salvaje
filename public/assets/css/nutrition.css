@@ -1,0 +1,409 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+    /* Para evitar desplazamiento horizontal */
+
+}
+
+.training-hero {
+    background-image: url('https://i.imgur.com/il6HXYQ.png');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.banner-section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 250px 0;
+    padding: 4rem 2rem;
+    /* background: linear-gradient(135deg, #f4f4f4 0%, #ffffff 100%); */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* background: radial-gradient(circle, rgba(32,126,39,0.1) 0%, rgba(32,126,39,0) 70%); */
+    z-index: 0;
+    animation: pulse 15s infinite alternate;
+}
+
+.banner-text {
+    position: relative;
+    max-width: 600px;
+    flex: 1;
+    padding: 2rem;
+    z-index: 1;
+    text-align: left;
+}
+
+.banner-text h2 {
+    font-size: 2.5rem;
+    color: #207E27;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.banner-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: #207E27;
+    border-radius: 2px;
+}
+
+.banner-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.banner-text p:last-child {
+    font-weight: 500;
+    color: #207E27;
+}
+
+.banner-image {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    transform: perspective(1000px) rotateY(-10deg);
+    transition: transform 0.5s ease;
+}
+
+.banner-image:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.banner-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s ease;
+}
+
+.banner-image:hover img {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(5%, 5%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner-section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    .banner-text {
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .banner-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .banner-image {
+        margin-top: 2rem;
+        transform: none;
+    }
+
+    .banner-image:hover {
+        transform: none;
+    }
+}
+
+/*ESTILOS CARDS*/
+/* Estilos Generales */
+
+/* Sección de Entrenamiento (Cardio, Bicicleta, Zumba) */
+.training-section {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 5rem;
+}
+
+.category-section {
+    margin-bottom: 6rem;
+}
+
+.training-section h2 {
+    font-size: 5rem;
+}
+
+.category-section h3 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #207E27;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.cardio-section p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Estilos de las Cards */
+.cardio-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.cardio-card {
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.cardio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cardio-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cardio-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-info {
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-info h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #207E27;
+}
+
+.card-info p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.card-info button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icono de la Card */
+.card-icon-link {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.card-icon-link img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-icon-link img:hover {
+    transform: scale(1.2);
+}
+
+/* Card Lateral Expansible (Detalles) */
+.details-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 40%;
+    height: 100%;
+    background-color: #111;
+    color: #fff;
+    padding: 2rem;
+    transition: right 0.5s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.details-overlay.active {
+    right: 0;
+}
+
+.details-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.close-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 1rem;
+}
+
+.details-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.details-card h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.details-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.details-card .details-info p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+
+/* Fondo Blanco al Activar Detalles */
+.overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    /* Blanco completo */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 999;
+}
+
+.overlay-background.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Card Lateral Expansible */
+.details-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 40%;
+    height: 100vh;
+    background-color: #111;
+    color: #fff;
+    padding: 2rem;
+    transition: right 0.5s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.details-overlay.active {
+    right: 0;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+    .cardio-cards {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .cardio-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .details-overlay {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .training-section h2 {
+        font-size: 3rem;
+    }
+}

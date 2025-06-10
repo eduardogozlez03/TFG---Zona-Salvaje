@@ -1,0 +1,13 @@
+.logo-hero {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    font-family: 'Rubik Wet Paint', cursive;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #207E27;
+    padding: 30px;
+    color: #fff;
+    z-index: 9999;
+    cursor: pointer;
+}

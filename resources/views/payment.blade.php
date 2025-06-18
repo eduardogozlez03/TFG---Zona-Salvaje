@@ -37,8 +37,8 @@
                 <h3 class="title">Suscripción VIP</h3>
                 <p>Accede a rutinas exclusivas, soporte personalizado y contenido premium. Además de acceso total al
                     gimnasio Zona Salvaje</p>
-                <div class="price">19,99€/mes</div> <button
-                    onclick="window.location.href='/stripe/checkout.html'">Comprar</button>
+                <div class="price">19,99€/mes</div>
+                <button onclick="window.location.href='{{ url('backend_2/public/stripe/checkout.html') }}'">Comprar</button>
             </div>
         </div>
     </div>

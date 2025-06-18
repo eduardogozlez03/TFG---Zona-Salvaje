@@ -16,7 +16,7 @@
 <body>
     <!-- Logo Zona Salvaje -->
     <div class="logo-container">
-        <div class="logo" onclick="window.location.href='/'">ZONA SALVAJE</div>
+        <div class="logo" onclick="window.location.href='{{ url('/') }}'">ZONA SALVAJE</div>
     </div>
 
     <!-- Header -->

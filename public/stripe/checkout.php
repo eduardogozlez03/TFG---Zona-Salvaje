@@ -3,15 +3,17 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-require_once '../../vendor/autoload.php';
-require_once '../stripe/secrets.php';
+require_once __DIR__ . '/../../vendor/autoload.php';  // correcto
+require_once __DIR__ . '/secrets.php'; // asegúrate que esté en public/stripe
 
 \Stripe\Stripe::setVerifySslCerts(false);
 
 $stripe = new \Stripe\StripeClient($stripeSecretKey);
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://localhost:8000/subscription/success?subscription=vip';
+// $YOUR_DOMAIN = 'http://localhost:8000/subscription/success?subscription=vip';
+$YOUR_DOMAIN = 'https://ruizgijon.ddns.net/gonzaleze/subscription/success?subscription=vip';
+
 
 $checkout_session = $stripe->checkout->sessions->create([
   'ui_mode' => 'embedded',

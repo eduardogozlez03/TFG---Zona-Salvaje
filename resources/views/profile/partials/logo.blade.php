@@ -4,4 +4,5 @@
 </head>
 
 <!-- Contenido Principal -->
-<div class="logo-hero" onclick="window.location.href='/'">ZONA SALVAJE</div>
+<div class="logo-hero" onclick="window.location.href='{{ url('/') }}'">ZONA SALVAJE</div>
+

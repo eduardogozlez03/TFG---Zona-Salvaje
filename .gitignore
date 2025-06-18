@@ -22,4 +22,4 @@ yarn-error.log
 /.vscode
 /.zed
 public/stripe/secrets.php
-public/stripe/secrets.php
+

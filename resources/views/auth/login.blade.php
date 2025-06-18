@@ -180,10 +180,9 @@
         }
     </style>
 
-    <a href="/" class="back-home-icon" title="Volver al inicio">
+    <a href="{{ url('/') }}" class="back-home-icon" title="Volver al inicio">
         <i class="fas fa-arrow-left"></i>
     </a>
-
 
     <div class="login-container">
         <div class="login-header">

@@ -5,10 +5,10 @@
 <footer class="footer">
     <div class="spacer-top"></div>
     <div class="social-icons">
-        <img src="/icons/instagram.svg" alt="Instagram" />
-        <img src="/icons/facebook.svg" alt="Facebook" />
-        <img src="/icons/tiktok.svg" alt="TikTok" />
-        <img src="/icons/twitter-x.svg" alt="Twitter-X" />
+        <img src="{{ asset('icons/instagram.svg') }}" alt="Instagram" />
+        <img src="{{ asset('icons/facebook.svg') }}" alt="Facebook" />
+        <img src="{{ asset('icons/tiktok.svg') }}" alt="TikTok" />
+        <img src="{{ asset('icons/twitter-x.svg') }}" alt="Twitter-X" />
     </div>
 
     <div class="footer-links">

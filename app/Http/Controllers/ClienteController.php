@@ -18,8 +18,6 @@ class ClienteController extends Controller
         return view('area_cliente', compact('user'));
     }
 
-// app/Http/Controllers/ClienteController.php
-
 
     public function unenroll(ClassModel $class)
     {

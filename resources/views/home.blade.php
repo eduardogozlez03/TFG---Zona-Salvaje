@@ -65,7 +65,7 @@
                     <h4>{{ $card->title }}</h4>
                     <p>{{ $card->description }}</p>
                     <a href="{{ $card->link ?? '#' }}" class="card-icon-link">
-                        <img src="/icons/enlaceCard.svg" alt="Icono" />
+                        <img src="{{ asset('icons/enlaceCard.svg') }}" alt="Icono" />
                     </a>
                 </div>
             @endforeach

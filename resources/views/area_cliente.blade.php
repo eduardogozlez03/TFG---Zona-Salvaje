@@ -43,11 +43,12 @@
         <div class="page-header">
             <!-- Contenedor del logo -->
             <div class="admin-logo-container">
-                <div class="admin-logo" onclick="window.location.href='/'">ZONA SALVAJE</div>
+                <div class="admin-logo" onclick="window.location.href='{{ url('/') }}'">ZONA SALVAJE</div>
             </div>
-            <a href="/" class="home-icon" title="Ir al inicio">
+            <a href="{{ url('/') }}" class="home-icon" title="Ir al inicio">
                 <i class="fas fa-home"></i>
             </a>
+
         </div>
 
         <!-- Información del usuario -->
@@ -130,7 +131,6 @@
                 <div class="no-classes">
                     <p>No estás inscrito en ninguna clase actualmente.</p>
                     {{-- <a href="{{ route('classes.index') }}" class="btn btn-primary"> --}}
-                        <i class="fas fa-search"></i> Ver clases disponibles
                     </a>
                 </div>
             @endif

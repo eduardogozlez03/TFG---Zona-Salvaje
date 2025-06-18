@@ -57,7 +57,7 @@
                         <div class="card-info">
                             <h3>{{ $card->title }}</h3>
                             <a href="#" class="card-icon-link" onclick="openDetails('{{ $card->id }}')">
-                                <img src="/icons/enlaceCard.svg" alt="Icono" />
+                                <img src="{{ asset('icons/enlaceCard.svg') }}" alt="Icono" />
                             </a>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                         <div class="card-info">
                             <h3>{{ $card->title }}</h3>
                             <a href="#" class="card-icon-link" onclick="openDetails('{{ $card->id }}')">
-                                <img src="/icons/enlaceCard.svg" alt="Icono" />
+                                <img src="{{ asset('icons/enlaceCard.svg') }}" alt="Icono" />
                             </a>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                         <div class="card-info">
                             <h3>{{ $card->title }}</h3>
                             <a href="#" class="card-icon-link" onclick="openDetails('{{ $card->id }}')">
-                                <img src="/icons/enlaceCard.svg" alt="Icono" />
+                                <img src="{{ asset('icons/enlaceCard.svg') }}" alt="Icono" />
                             </a>
                         </div>
                     </div>
